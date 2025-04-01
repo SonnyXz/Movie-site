@@ -18,6 +18,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { MyImage } from "@/components/MyImage";
+import { MovieList } from "@/components/ui/movieList";
+import { Movie } from "@/components/ui/movie";
 
 export default function Home() {
   return (
@@ -142,6 +144,8 @@ export default function Home() {
           <CarouselNext className="mr-20" />
         </Carousel>
       </div>
+      <MovieList title="Upcoming"></MovieList>
+      <MovieList title="Popular" />
     </div>
   );
 }
