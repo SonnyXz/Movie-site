@@ -18,9 +18,9 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { MyImage } from "@/components/MyImage";
-import { MovieList } from "@/components/ui/movieList";
-import { Movie } from "@/components/ui/movie";
-
+import { Upcoming } from "@/components/Upcoming";
+import { Popular } from "@/components/Popular";
+import { TopRated } from "@/components/TopRated";
 export default function Home() {
   return (
     <div className="">
@@ -94,7 +94,7 @@ export default function Home() {
               <div className="absolute top-[170px] left-[200px]">
                 <p className="text-white text-[16px]">Now playing:</p>
                 <h1 className="text-white font-bold text-[36px]">Wicked</h1>
-                <p className="flex items-center gap-1 ">
+                <div className="flex items-center gap-1 ">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="28"
@@ -106,12 +106,12 @@ export default function Home() {
                       d="M13.9997 2.3335L17.6047 9.63683L25.6663 10.8152L19.833 16.4968L21.2097 24.5235L13.9997 20.7318L6.78967 24.5235L8.16634 16.4968L2.33301 10.8152L10.3947 9.63683L13.9997 2.3335Z"
                       fill="#FDE047"
                       stroke="#FDE047"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </svg>
                   <p className="text-white">6.9/10</p>
-                </p>
+                </div>
                 <p className="text-white w-[605px] text-3 h-[80px] leading-4 font-light py-4">
                   Elphaba, a misunderstood young woman because of her green
                   skin, and Glinda, a popular girl, become friends at Shiz
@@ -129,23 +129,36 @@ export default function Home() {
                     <path
                       d="M3.33301 2L12.6663 8L3.33301 14V2Z"
                       stroke="#18181B"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </svg>
                   <p className="text-black">Watch Trailer</p>
                 </Button>
               </div>
             </CarouselItem>
-            <CarouselItem></CarouselItem>
-            <CarouselItem></CarouselItem>
+            <CarouselItem>
+              <MyImage
+                imge={
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT84JIjHHPSM3QMduBQYy_auhRqQspgIB6uyA&s"
+                }
+              />
+            </CarouselItem>
+            <CarouselItem>
+              <MyImage
+                imge={
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK40vO37MZAopz2gK8W-Yqfj5kuspmRk4O0A&s"
+                }
+              />
+            </CarouselItem>
           </CarouselContent>
           <CarouselPrevious className="ml-20" />
           <CarouselNext className="mr-20" />
         </Carousel>
       </div>
-      <MovieList title="Upcoming"></MovieList>
-      <MovieList title="Popular" />
+      <Upcoming />
+      <Popular />
+      <TopRated />
     </div>
   );
 }
